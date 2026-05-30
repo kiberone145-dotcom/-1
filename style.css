@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter;
+  background: #05060f;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* GRID BACKGROUND */
+.grid {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -3;
+}
+
+/* GLOW */
+.blob {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  filter: blur(140px);
+  opacity: 0.25;
+  z-index: -2;
+}
+
+.b1 { background: #00f5ff; top: -150px; left: -150px; }
+.b2 { background: #8a2be2; bottom: -150px; right: -150px; }
+
+/* CURSOR */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: #00f5ff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.cursor-glow {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  background: rgba(0,245,255,0.1);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo span { color: #00f5ff; }
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+nav a:hover { color: #00f5ff; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 60px;
+}
+
+.hero h1 {
+  font-size: 80px;
+  background: linear-gradient(90deg,#fff,#00f5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tag {
+  color: #00f5ff;
+}
+
+.typing {
+  font-size: 22px;
+  color: #aaa;
+  margin: 10px 0;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.primary {
+  background: linear-gradient(90deg,#00f5ff,#8a2be2);
+}
+
+.ghost {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+/* CARD */
+.card {
+  width: 320px;
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  position: relative;
+}
+
+.shine {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,245,255,0.2), transparent);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.stats span {
+  font-size: 26px;
+  color: #00f5ff;
+}
+
+/* SKILLS */
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin: 80px 0 30px;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+  padding: 0 60px;
+}
+
+.card-s {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.card-s:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0,245,255,0.2);
+}
+
+/* ABOUT */
+.about {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 20px;
+}
+
+/* CONTACT */
+.contacts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px;
+}
+
+.c-card {
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  text-decoration: none;
+  color: white;
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LOADER */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #05060f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-box {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #222;
+  border-top: 4px solid #00f5ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #777;
+}
